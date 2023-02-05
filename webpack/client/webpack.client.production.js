@@ -25,7 +25,12 @@ const clientConfig = {
       rules: [
          {
             test: /\.(css|scss|sass)$/,
-            use: [MiniCssExtractPlugin.loader, "css-loader"],
+            use: [MiniCssExtractPlugin.loader, {
+               loader: "css-loader",
+               options: {
+                  sourceMap: false,
+                }
+            }],
          },
          {
             test: /\.(png|svg|jpg|jpeg|gif)$/i,

@@ -30,7 +30,8 @@ export const serverRoutes = [
 function loadHomePage(){
    let props = {
       title: "Awesome home page",
-      description: "This is the desc for about the server side rendering with react and node.js"
+      description: "This is the desc for about the server side rendering with react and node.js",
+      image: "client/assets/download.jpeg"
    }
 
    return props

@@ -33,25 +33,26 @@ if (process.env.NODE_ENV == "development") {
 }
 app.use(
    helmet({
-     contentSecurityPolicy: {
-      directives:{
-         scriptSrc: [
-            "'strict-dynamic'", // For nonces to work
-            `'nonce-${scriptNonce}'`,   // adding the nonce
+      contentSecurityPolicy: false,
+   //   contentSecurityPolicy: {
+   //    directives:{
+   //       scriptSrc: [
+   //          "'strict-dynamic'", // For nonces to work
+   //          `'nonce-${scriptNonce}'`,   // adding the nonce
 
-            "'unsafe-inline'",      // for backwarc browsers compatibilty
-            "https:"    // for backwarc browsers compatibilty
-        ],
-        scriptSrcAttr: null, // Remove Firefox warning
-        styleSrc: [
-         "'strict-dynamic'", // For nonces to work
-         `'nonce-${scriptNonce}'`,     // adding the nonce
+   //          "'unsafe-inline'",      // for backwarc browsers compatibilty
+   //          "https:"    // for backwarc browsers compatibilty
+   //      ],
+   //      scriptSrcAttr: null, // Remove Firefox warning
+   //      styleSrc: [
+   //       "'strict-dynamic'", // For nonces to work
+   //       `'nonce-${scriptNonce}'`,     // adding the nonce
 
-         "'unsafe-inline'",    // for backwarc browsers compatibilty
-         "https:"    // for backwarc browsers compatibilty
-     ], // Remove 'unsafe-inline'
-      }
-     },
+   //       "'unsafe-inline'",    // for backwarc browsers compatibilty
+   //       "https:"    // for backwarc browsers compatibilty
+   //   ], // Remove 'unsafe-inline'
+   //    }
+   //   },
      crossOriginEmbedderPolicy: false,
      crossOriginOpenerPolicy: {
        policy: "same-origin-allow-popups",
