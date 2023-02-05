@@ -3,7 +3,6 @@ import { usePagePropsCtx } from "../contexts/PagePropsCtx"
 
 export default function HomePage() {
    const props = usePagePropsCtx()
-   console.log(props)
 
    return (
       <>

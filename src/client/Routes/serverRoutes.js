@@ -1,5 +1,6 @@
 import loadable from "@loadable/component"
 import { Navigate } from "react-router-dom"
+import HomeImage from "../assets/download.jpeg"
 
 const HomePage = loadable(() => import("../Pages/Home.page"))
 const Login = loadable(() => import("../Pages/Login.page"))
@@ -31,7 +32,7 @@ function loadHomePage(){
    let props = {
       title: "Awesome home page",
       description: "This is the desc for about the server side rendering with react and node.js",
-      image: "client/assets/download.jpeg"
+      image: HomeImage
    }
 
    return props
