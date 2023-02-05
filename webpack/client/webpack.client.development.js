@@ -16,13 +16,13 @@ const clientConfig = {
       client: ["webpack-hot-middleware/client?reload=true&noInfo=true", "./src/client/index.jsx"],
    },
    devtool: "inline-cheap-module-source-map",
-   devServer: {
-      contentBase: "./build",
-      compress: true,
-      historyApiFallback: true,
-      hot: true,
-      open: false,
-   },
+   // devServer: {
+   //    contentBase: "./build",
+   //    compress: true,
+   //    historyApiFallback: true,
+   //    hot: true,
+   //    open: false,
+   // },
    output: {
       path: resolvePath(BUILD_DIR, "client"),
       publicPath: "/client/",
@@ -43,6 +43,13 @@ const clientConfig = {
             test: /\.(css|scss)$/,
             use: [MiniCssExtractPlugin.loader, "css-loader"],
          },
+         {
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: "asset/resource",
+            generator: {
+               filename: 'assets/[name][ext]'
+           }
+         }
       ],
    },
    plugins: [

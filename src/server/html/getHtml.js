@@ -6,7 +6,8 @@ export default function getHtml({
    page_props,
    inlineStyles,
    scriptTags,
-   preloadScriptTags,
+   scriptNonce
+   // preloadScriptTags,
 }) {
    return `<!DOCTYPE html>
    <html lang="en-US">
@@ -16,20 +17,21 @@ export default function getHtml({
          ${meta}
          ${styles}
          ${inlineStyles}
-         ${preloadScriptTags}
-         </head>
-         <body>
-         <div id="root">${children}</div>
-         ${insertProps(page_props)}
          ${scriptTags}
-         </body>
+      </head>
+      <body>
+         <div id="root">${children}</div>
+         ${insertProps(page_props, scriptNonce)}
+      </body>
       </html>`
 }
 
-function insertProps(props) {
+function insertProps(props, scriptNonce) {
    if (!props) return ""
    if (Object.keys(props).length > 0) {
-      return `<script>window.__data=${JSON.stringify(props)}</script>`
+      return `<script nonce=${scriptNonce}>window.__data=${JSON.stringify(props)}</script>`
    }
    return ""
 }
+
+// ${preloadScriptTags}

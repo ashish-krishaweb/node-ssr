@@ -3,8 +3,9 @@ const Dotenv = require("dotenv-webpack")
 const path = require("path")
 
 const scriptRegExtensions = /\.(js|jsx|mjs)/
-const imgRegExtensions = /\.(png|jpg|jpeg)/
-const fontRegExtensions = /\.(eot|otf|ttf|woff|woff2)/
+const imgRegExtensions = /\.(png|svg|jpg|jpeg|gif)$/i
+const fontRegExtensions = /\.(eot|otf|ttf|woff|woff2)/i
+
 
 module.exports = {
    resolve: {
@@ -31,15 +32,21 @@ module.exports = {
          {
             test: fontRegExtensions,
             type: "asset",
+            generator: {
+               filename: 'assets/fonts/[name][ext]'
+            }
          },
          {
             test: /\.svg/,
             type: "asset/inline",
          },
-         {
-            test: imgRegExtensions,
-            type: "asset/resourse",
-         },
+         // {
+         //    test: imgRegExtensions,
+         //    type: "asset/resource",
+         //    generator: {
+         //       filename: 'assets/[name][ext]'
+         //   }
+         // },
       ],
    },
 }

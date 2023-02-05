@@ -9,6 +9,7 @@ export default function HomePage() {
          <Helmet>
             <title>{props?.title || "Home page Default"}</title>
             <meta name="title" property="og:title" content="Home page" />
+            {props?.description && <meta name="description" property="og:description" content={props?.description} /> }
          </Helmet>
          <div>
             <h1>This is home page</h1>

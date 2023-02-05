@@ -11,6 +11,7 @@ const root = createRoot(document.getElementById("root"))
 const rootContent = document.getElementById("root")
 let Element
 
+
 const renderApp = () => {
    if (process.env.NODE_ENV == "development") {
       const { StrictMode } = require("react")

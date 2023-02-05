@@ -27,6 +27,13 @@ const clientConfig = {
             test: /\.(css|scss|sass)$/,
             use: [MiniCssExtractPlugin.loader, "css-loader"],
          },
+         {
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: "asset/resource",
+            generator: {
+               filename: 'assets/[id][ext]'
+           }
+         }
       ],
    },
    output: {
