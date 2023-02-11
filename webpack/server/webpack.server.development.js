@@ -1,13 +1,14 @@
 const path = require("path")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const { merge } = require("webpack-merge")
 const webpackNodeExternals = require("webpack-node-externals")
+
 
 const baseConfig = require("../webpack.common")
 
 const ROOT_DIR = path.resolve(__dirname, "../../")
 const resolvePath = (...args) => path.resolve(ROOT_DIR, ...args)
 const BUILD_DIR = resolvePath("build")
+
 
 const serverConfig = {
    target: "node",
@@ -24,7 +25,7 @@ const serverConfig = {
       rules: [
          {
             test: /\.(css|scss)$/,
-            use: [MiniCssExtractPlugin.loader, "css-loader"],
+            use: ["style-loader", "css-loader","sass-loader"],
          },
          {
             test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -35,7 +36,7 @@ const serverConfig = {
          }
       ],
    },
-   plugins: [...baseConfig.plugins, new MiniCssExtractPlugin()],
+   plugins: [...baseConfig.plugins],
    output: {
       path: BUILD_DIR,
       filename: "[name].js",

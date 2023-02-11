@@ -2,6 +2,7 @@ const { ProvidePlugin } = require("webpack")
 const Dotenv = require("dotenv-webpack")
 const path = require("path")
 
+
 const scriptRegExtensions = /\.(js|jsx|mjs)/
 const imgRegExtensions = /\.(png|svg|jpg|jpeg|gif)$/i
 const fontRegExtensions = /\.(eot|otf|ttf|woff|woff2)/i
@@ -9,7 +10,8 @@ const fontRegExtensions = /\.(eot|otf|ttf|woff|woff2)/i
 
 module.exports = {
    resolve: {
-      extensions: [".js", ".jsx", "mjs"],
+      extensions: [".js", ".jsx", ".mjs", ".cjs"],
+      modules: ['node_modules'],
    },
    plugins: [
       // making React accessible everywhere in code without being declared or import
@@ -40,13 +42,6 @@ module.exports = {
             test: /\.svg/,
             type: "asset/inline",
          },
-         // {
-         //    test: imgRegExtensions,
-         //    type: "asset/resource",
-         //    generator: {
-         //       filename: 'assets/[name][ext]'
-         //   }
-         // },
       ],
    },
 }

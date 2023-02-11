@@ -1,14 +1,18 @@
 const { merge } = require("webpack-merge")
-const baseConfig = require("../webpack.common")
-const path = require("path")
 const LoadablePlugin = require("@loadable/webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")   // This plugin is used to minify the css/scss files.
 const TerserPlugin = require("terser-webpack-plugin") // This plugin is used to minify your JavaScript/Typescript files.
+
+const baseConfig = require("../webpack.common")
+const path = require("path")
+
 
 const ROOT_DIR = path.resolve(__dirname, "../../")
 const resolvePath = (...args) => path.resolve(ROOT_DIR, ...args)
 const BUILD_DIR = resolvePath("build")
+
+
 
 const clientConfig = {
    target: "web",
@@ -55,7 +59,7 @@ const clientConfig = {
       ...baseConfig.plugins,
       new MiniCssExtractPlugin({
          filename: "css/[name].[chunkhash:8].css",
-         ignoreOrder: true,
+         // ignoreOrder: true,
       }),
       new LoadablePlugin({
          outputAsset: false,
@@ -66,18 +70,7 @@ const clientConfig = {
    ],
    optimization: {
       // runtimeChunk: "single", // creates a runtime file to be shared for all generated chunks.
-      // splitChunks: {
-      //    chunks: "all", // This indicates which chunks will be selected for optimization.
-      //    automaticNameDelimiter: "-",
-      //    cacheGroups: {
-      //       vendor: {
-      //          // to convert long vendor generated large name into vendor.js
-      //          test: /[\\/]node_modules[\\/]/,
-      //          name: "vendor",
-      //          chunks: "all",
-      //       },
-      //    },
-      // },
+      splitChunks: false,   // generate only one file js-bundle per route
       minimize: true,
       minimizer: [
          new CssMinimizerPlugin(),
@@ -85,7 +78,7 @@ const clientConfig = {
             minify: TerserPlugin.swcMinify,
             terserOptions: {
                format: {
-                  comments: false, // It will drop all the console.log statements from the final production build
+                  comments: false, // It will drop all the console.log statements from the final production build,
                },
                mangle: true,
             },

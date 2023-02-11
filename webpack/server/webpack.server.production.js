@@ -1,16 +1,16 @@
 const { merge } = require("webpack-merge")
 const baseConfig = require("../webpack.common")
 const webpackNodeExternals = require("webpack-node-externals")
+const LoadablePlugin = require("@loadable/webpack-plugin")
+
 const path = require("path")
 const ROOT_DIR = path.resolve(__dirname, "../../")
 const resolvePath = (...args) => path.resolve(ROOT_DIR, ...args)
 const BUILD_DIR = resolvePath("build")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const webpack = require("webpack")
 
 const serverConfig = {
    target: "node",
-   mode: "production",
+   mode: "development",
    name: "server",
    entry: {
       server: "./src/server/index.js",
@@ -22,8 +22,8 @@ const serverConfig = {
       ...baseConfig.module,
       rules: [
          {
-            test: /\.(css|scss|sass)$/,
-            use: [MiniCssExtractPlugin.loader, "css-loader"],
+            test: /\.(css|scss)$/,
+            use: ["style-loader", "css-loader","sass-loader"],
          },
          {
             test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -34,22 +34,20 @@ const serverConfig = {
          }
       ],
    },
-   plugins: [
-      ...baseConfig.plugins,
-      new MiniCssExtractPlugin({
-         filename: "[name].[chunkhash:8].css",
-         ignoreOrder: true,
-      }),
-   ],
+   plugins: [...baseConfig.plugins],
    output: {
       path: BUILD_DIR,
       filename: "[name].js",
       libraryTarget: "commonjs2",
       chunkFilename: "chunks/[name].js",
       assetModuleFilename: "assets/[hash][ext][query]",
+      asyncChunks: true,
+   },
+   optimization: {
+      moduleIds: "deterministic",
+      minimize: false,
    },
    externals: [webpackNodeExternals()],
 }
 
 module.exports = merge(baseConfig, serverConfig)
-webpack({})

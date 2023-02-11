@@ -2,6 +2,8 @@ import express from "express"
 import compression from "compression"
 import helmet from "helmet";
 import crypto from "crypto"
+import cluster from "cluster";
+import os from 'os'
 
 // import dotenv from "dotenv"
 
@@ -10,9 +12,9 @@ import htmlRenderer from "./htmlRenderer"
 // dotenv.config()
 const app = express()
 
+
 // Generating a nonce for Lodash with crypto
 let scriptNonce = crypto.randomBytes(16).toString("hex")
-
 
 
 if (process.env.NODE_ENV == "development") {
@@ -26,6 +28,7 @@ if (process.env.NODE_ENV == "development") {
       WebpackDevMiddleware(compiler, {
          publicPath: webpackConfig.output.publicPath,
          serverSideRender: true,
+
       })
    )
 
@@ -64,15 +67,28 @@ app.use(
 app.use(compression())
 app.use(express.static("build"))
 
-app.get("*", async (req, res) => {
-   try {
-      const { html, status } = await htmlRenderer(req, scriptNonce)
-      res.status(status).send(html)
-   } catch (err) {
-      console.log("error in server side render", err)
-   }
-})
 
-app.listen(3000, () => {
-   console.log("server running")
-})
+if(cluster.isPrimary){
+   for(let i=0;i<os.cpus().length; i++){
+      cluster.fork()
+   }
+   cluster.on("exit", (worker, code, signal) => {
+      console.log(`worker ${worker.process.pid} died`);
+      cluster.fork();
+    });
+}else{
+   app.get("*", async (req, res) => {
+      try {
+         const { html, status } = await htmlRenderer(req, scriptNonce)
+         res.status(status).send(html)
+      } catch (err) {
+         console.log("error in server side render", err)
+      }
+   })
+   
+   app.listen(3002, () => {
+      console.log("server running")
+   })
+
+}
+

@@ -6,7 +6,8 @@ export default function getHtml({
    page_props,
    inlineStyles,
    scriptTags,
-   scriptNonce
+   scriptNonce,
+   styleLinks
    // preloadScriptTags,
 }) {
    return `<!DOCTYPE html>
@@ -16,6 +17,7 @@ export default function getHtml({
          ${title}
          ${meta}
          ${styles}
+         <!-- ${styleLinks} -->
          ${inlineStyles}
          ${scriptTags}
       </head>

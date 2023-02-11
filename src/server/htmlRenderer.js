@@ -56,11 +56,6 @@ export default async function htmlRenderer(req, scriptNonce) {
       )
    )
 
-   // const preloadScriptTags = extractor
-   //    .getLinkElements()
-   //    .filter((s) => s.props.as != "style")
-   //    .reduce((acc, value) => acc + renderToString(value), "")
-
    const htmlData = {
       page_props,
       children: content,
@@ -70,6 +65,7 @@ export default async function htmlRenderer(req, scriptNonce) {
       inlineStyles: await extractor.getInlineStyleTags({ nonce: scriptNonce }),
       scriptTags: extractor.getScriptTags({ nonce: scriptNonce }),
       scriptNonce,
+      styleLinks: extractor.getStyleTags()
       // preloadScriptTags,
    }
 

@@ -1,4 +1,6 @@
-import { Helmet } from "react-helmet-async"
+import Link from "react-ripples-hover/dist/Components/Link"
+import Button from "../component/Button"
+import HelmetMetaTags from "../component/HelmetMetaTags"
 import { usePagePropsCtx } from "../contexts/PagePropsCtx"
 
 export default function HomePage() {
@@ -6,26 +8,13 @@ export default function HomePage() {
 
    return (
       <>
-         <Helmet>
-            <title>{props?.title || "Home page Default"}</title>
-            <meta name="title" property="og:title" content="Home page" />
-            {props?.description && <meta name="description" property="og:description" content={props?.description} /> }
-            {props.image && <meta name="image" property="og:image" content={props.image}/>}
-            {props.image && <link rel="shortcut icon" href={props.image} type="image/x-icon" />}
-            
-         </Helmet>
+         <HelmetMetaTags title={props?.title} description={props?.description} image={props?.image}/>
          <div>
             <h1>This is home page</h1>
             <button onClick={() => console.log("ok")}>click me</button>
+            <Link variant="primary">Home</Link>
          </div>
+         <Button />
       </>
    )
-}
-
-HomePage.getServerSideProps = () =>{
-   return new Promise((res, rej) => res({
-      title: "Awesome home page",
-      description: "This is the desc for about the server side rendering with react and node.js",
-      image: "client/assets/download.jpeg"
-   }))
 }

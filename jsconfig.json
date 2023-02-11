@@ -3,8 +3,12 @@
       "module": "commonjs",
       "target": "es2016",
       "jsx": "preserve",
-      "checkJs": true,
+      "checkJs": false,
       "alwaysStrict": true,
+      "baseUrl": "./src/client",
+      "paths": {
+         "@comp/*": ["./components/*"]
+      }
    },
    "exclude": [
       "node_modules",

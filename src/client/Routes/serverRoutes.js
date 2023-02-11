@@ -1,16 +1,26 @@
 import loadable from "@loadable/component"
 import { Navigate } from "react-router-dom"
-import HomeImage from "../assets/download.jpeg"
 
-const HomePage = loadable(() => import("../Pages/Home.page"))
-const Login = loadable(() => import("../Pages/Login.page"))
-const PageNotFound = loadable(() => import("../Pages/PageNotFound.page"))
+// page loaders
+import CommonPageLoader from "../PageLoaders/CommonLoader"
 
+// pageProps fetcher imports
+import homePagePropsFetcher from "../PagePropsFetcher/HomePage.fetcher"
+
+
+// page imports
+const HomePage = loadable(() => import("../Pages/Home.page"), {fallback: CommonPageLoader})
+const Login = loadable(() => import("../Pages/Login.page"), {fallback: CommonPageLoader})
+const LoadPage = loadable(() => import("../Pages/Load.page"), {fallback: CommonPageLoader})
+const PageNotFound = loadable(() => import("../Pages/PageNotFound.page"), {fallback: CommonPageLoader})
+
+
+// define all of the routes of the application
 export const serverRoutes = [
    {
       path: "/",
       element: HomePage,
-      loadData: loadHomePage
+      loadData: homePagePropsFetcher
    },
    {
       path: "/login",
@@ -22,19 +32,11 @@ export const serverRoutes = [
       element: ({ to }) => <Navigate to={to} />,
    },
    {
+      path: "/load",
+      element: LoadPage
+   },
+   {
       path: "*",
       element: PageNotFound,
    },
 ]
-
-
-function loadHomePage(){
-   let props = {
-      title: "Awesome home page",
-      description: "This is the desc for about the server side rendering with react and node.js",
-      image: HomeImage
-   }
-
-   return props
-
-}
