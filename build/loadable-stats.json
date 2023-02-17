@@ -1,0 +1,361 @@
+{
+  "hash": "24a0fc9704e27cc5e70a",
+  "publicPath": "/client/",
+  "outputPath": "/home/user/KrishaWeb/Projects/Practice/react-srr/8_advanced_loading/build/client",
+  "assetsByChunkName": {
+    "client": [
+      "css/client.41552510.css",
+      "js/client.41552510.js"
+    ],
+    "Pages-Home-page": [
+      "css/Pages-Home-page.aceb39fe.css",
+      "js/chunks/Pages-Home-page.aceb39fe.js"
+    ],
+    "Pages-Login-page": [
+      "js/chunks/Pages-Login-page.cff9d63b.js"
+    ],
+    "Pages-Load-page": [
+      "js/chunks/Pages-Load-page.e67ef2d9.js"
+    ],
+    "Pages-PageNotFound-page": [
+      "js/chunks/Pages-PageNotFound-page.d0e74b2a.js"
+    ]
+  },
+  "assets": [
+    {
+      "type": "asset",
+      "name": "js/client.41552510.js",
+      "size": 192323,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "immutable": true,
+        "chunkhash": "41552510",
+        "javascriptModule": false,
+        "minimized": true,
+        "related": {
+          "sourceMap": "js/client.41552510.js.map"
+        }
+      },
+      "chunkNames": [
+        "client"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "filteredRelated": 1,
+      "chunks": [
+        47
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "js/chunks/Pages-Home-page.aceb39fe.js",
+      "size": 59097,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "immutable": true,
+        "chunkhash": "aceb39fe",
+        "javascriptModule": false,
+        "minimized": true,
+        "related": {
+          "sourceMap": "js/chunks/Pages-Home-page.aceb39fe.js.map"
+        }
+      },
+      "chunkNames": [
+        "Pages-Home-page"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "filteredRelated": 1,
+      "chunks": [
+        51
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "js/chunks/Pages-Load-page.e67ef2d9.js",
+      "size": 22313,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "immutable": true,
+        "chunkhash": "e67ef2d9",
+        "javascriptModule": false,
+        "minimized": true,
+        "related": {
+          "sourceMap": "js/chunks/Pages-Load-page.e67ef2d9.js.map"
+        }
+      },
+      "chunkNames": [
+        "Pages-Load-page"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "filteredRelated": 1,
+      "chunks": [
+        644
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "assets/6700.jpeg",
+      "size": 8598,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "sourceFilename": "src/client/assets/download.jpeg"
+      },
+      "chunkNames": [],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [
+        "client"
+      ],
+      "auxiliaryChunkIdHints": [],
+      "chunks": [],
+      "auxiliaryChunks": [
+        47
+      ]
+    },
+    {
+      "type": "asset",
+      "name": "css/Pages-Home-page.aceb39fe.css",
+      "size": 1981,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "immutable": true,
+        "chunkhash": "aceb39fe",
+        "minimized": true
+      },
+      "chunkNames": [
+        "Pages-Home-page"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "chunks": [
+        51
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "js/chunks/Pages-Login-page.cff9d63b.js",
+      "size": 644,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "immutable": true,
+        "chunkhash": "cff9d63b",
+        "javascriptModule": false,
+        "minimized": true,
+        "related": {
+          "sourceMap": "js/chunks/Pages-Login-page.cff9d63b.js.map"
+        }
+      },
+      "chunkNames": [
+        "Pages-Login-page"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "filteredRelated": 1,
+      "chunks": [
+        138
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "js/chunks/Pages-PageNotFound-page.d0e74b2a.js",
+      "size": 429,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "immutable": true,
+        "chunkhash": "d0e74b2a",
+        "javascriptModule": false,
+        "minimized": true,
+        "related": {
+          "sourceMap": "js/chunks/Pages-PageNotFound-page.d0e74b2a.js.map"
+        }
+      },
+      "chunkNames": [
+        "Pages-PageNotFound-page"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "filteredRelated": 1,
+      "chunks": [
+        896
+      ],
+      "auxiliaryChunks": []
+    },
+    {
+      "type": "asset",
+      "name": "css/client.41552510.css",
+      "size": 197,
+      "emitted": false,
+      "comparedForEmit": false,
+      "cached": true,
+      "info": {
+        "immutable": true,
+        "chunkhash": "41552510",
+        "minimized": true
+      },
+      "chunkNames": [
+        "client"
+      ],
+      "chunkIdHints": [],
+      "auxiliaryChunkNames": [],
+      "auxiliaryChunkIdHints": [],
+      "chunks": [
+        47
+      ],
+      "auxiliaryChunks": []
+    }
+  ],
+  "namedChunkGroups": {
+    "client": {
+      "name": "client",
+      "chunks": [
+        47
+      ],
+      "assets": [
+        {
+          "name": "css/client.41552510.css"
+        },
+        {
+          "name": "js/client.41552510.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 2,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "Pages-Home-page": {
+      "name": "Pages-Home-page",
+      "chunks": [
+        51
+      ],
+      "assets": [
+        {
+          "name": "css/Pages-Home-page.aceb39fe.css"
+        },
+        {
+          "name": "js/chunks/Pages-Home-page.aceb39fe.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 1,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "Pages-Login-page": {
+      "name": "Pages-Login-page",
+      "chunks": [
+        138
+      ],
+      "assets": [
+        {
+          "name": "js/chunks/Pages-Login-page.cff9d63b.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 1,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "Pages-Load-page": {
+      "name": "Pages-Load-page",
+      "chunks": [
+        644
+      ],
+      "assets": [
+        {
+          "name": "js/chunks/Pages-Load-page.e67ef2d9.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 1,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "Pages-PageNotFound-page": {
+      "name": "Pages-PageNotFound-page",
+      "chunks": [
+        896
+      ],
+      "assets": [
+        {
+          "name": "js/chunks/Pages-PageNotFound-page.d0e74b2a.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 1,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "generator": "loadable-components",
+  "chunks": [
+    {
+      "id": 47,
+      "files": [
+        "css/client.41552510.css",
+        "js/client.41552510.js"
+      ]
+    },
+    {
+      "id": 51,
+      "files": [
+        "css/Pages-Home-page.aceb39fe.css",
+        "js/chunks/Pages-Home-page.aceb39fe.js"
+      ]
+    },
+    {
+      "id": 138,
+      "files": [
+        "js/chunks/Pages-Login-page.cff9d63b.js"
+      ]
+    },
+    {
+      "id": 644,
+      "files": [
+        "js/chunks/Pages-Load-page.e67ef2d9.js"
+      ]
+    },
+    {
+      "id": 896,
+      "files": [
+        "js/chunks/Pages-PageNotFound-page.d0e74b2a.js"
+      ]
+    }
+  ]
+}
