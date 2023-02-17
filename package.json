@@ -7,13 +7,13 @@
     "node": "14.x"
   },
   "scripts": {
+    "start": "rm -rf build && webpack-dev-server --node-env=development --mode=development --config webpack/server/webpack.server.development.js --config webpack/client/webpack.client.development.js && node build/server.js",
     "startWatch": "npm-run-all --parallel startWatch:*",
     "startWatch:build-server": "webpack --config webpack/server/webpack.server.development.js --watch",
     "startWatch:build-client": "webpack --node-env=development --config webpack/client/webpack.client.development.js --watch --no-cache",
     "startWatch:server": "nodemon --watch build --exec node build/server.js",
     "build:prod": "rm -rf ./build && webpack --node-env=production --config webpack/server/webpack.server.production.js --config webpack/client/webpack.client.production.js",
-    "build:serve": "npm run build:prod && node build/index",
-    "start": "node build/index.js"
+    "build:serve": "npm run build:prod && node build/index"
   },
   "keywords": [],
   "author": "",
@@ -30,13 +30,10 @@
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",
     "react-ripples-hover": "^0.2.1",
-    "react-router-dom": "^6.4.5",
-    "styled-components": "^5.3.6"
+    "react-router-dom": "^6.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
-    "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/preset-env": "^7.20.2",
     "@babel/preset-modules": "^0.1.5",
     "@babel/preset-react": "^7.18.6",
     "@loadable/babel-plugin": "^5.13.2",
@@ -52,13 +49,11 @@
     "mini-css-extract-plugin": "^2.7.2",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
-    "react-dev-utils": "^12.0.1",
     "sass": "^1.58.0",
     "sass-loader": "^13.2.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-middleware": "^6.0.1",
-    "webpack-devserver": "0.0.6",
     "webpack-hot-middleware": "^2.25.3",
     "webpack-merge": "^5.8.0",
     "webpack-node-externals": "^3.0.0"
