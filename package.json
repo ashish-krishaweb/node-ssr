@@ -7,13 +7,13 @@
     "node": "14.x"
   },
   "scripts": {
-    "start": "rm -rf build && webpack-dev-server --node-env=development --mode=development --config webpack/server/webpack.server.development.js --config webpack/client/webpack.client.development.js && node build/server.js",
     "startWatch": "npm-run-all --parallel startWatch:*",
     "startWatch:build-server": "webpack --config webpack/server/webpack.server.development.js --watch",
     "startWatch:build-client": "webpack --node-env=development --config webpack/client/webpack.client.development.js --watch --no-cache",
     "startWatch:server": "nodemon --watch build --exec node build/server.js",
     "build:prod": "rm -rf ./build && webpack --node-env=production --config webpack/server/webpack.server.production.js --config webpack/client/webpack.client.production.js",
-    "build:serve": "npm run build:prod && node build/index"
+    "build:serve": "npm run build:prod && node build/index",
+    "start":"npm run build:prod && node build/index.js"
   },
   "keywords": [],
   "author": "",
