@@ -37,7 +37,7 @@ const serverConfig = {
    plugins: [...baseConfig.plugins],
    output: {
       path: BUILD_DIR,
-      filename: "[name].js",
+      filename: "index.js",
       libraryTarget: "commonjs2",
       chunkFilename: "chunks/[name].js",
       assetModuleFilename: "assets/[hash][ext][query]",
