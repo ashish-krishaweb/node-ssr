@@ -81,6 +81,9 @@ const clientConfig = {
                   comments: false, // It will drop all the console.log statements from the final production build,
                },
                mangle: true,
+               compress: true,
+               safari10: true,
+               ecma: 2017
             },
             extractComments: true,
             exclude: [], // If you want to exclude any files so that it doesn't get minified.

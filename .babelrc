@@ -1,23 +1,12 @@
 {
    "presets": [
-      [
-         "@babel/preset-env",
-         {
-            "bugfixes": true
-         }
-      ],
+      "@babel/preset-modules",
       "@babel/preset-react"
    ],
    "plugins": [
       "@loadable/babel-plugin",
       "css-modules-transform",
-      "babel-plugin-styled-components",
-      [
-         "@babel/plugin-proposal-class-properties",
-         {
-            "loose": false
-         }
-      ]
+      "babel-plugin-styled-components"
    ],
    "ignore": [
       "build"
